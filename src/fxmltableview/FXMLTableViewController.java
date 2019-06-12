@@ -55,8 +55,8 @@ public class FXMLTableViewController implements Initializable {
         fName.setCellValueFactory(new PropertyValueFactory("firstName"));
         lName.setCellValueFactory(new PropertyValueFactory("lastName"));
         emailValue.setCellValueFactory(new PropertyValueFactory("email"));
-        Person jacob = new Person("zhao", "Smithy", "jacob.smithy@example.com");
-        Person ethan = new Person("junfeng", "William", "ethan.william@example.com");
+        Person jacob = new Person("Jacob", "Smithy", "jacob.smithy@example.com");
+        Person ethan = new Person("Ethan", "William", "ethan.william@example.com");
         list.add(jacob);
         list.add(ethan);
         tableView.setItems(list);
