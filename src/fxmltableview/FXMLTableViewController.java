@@ -74,7 +74,7 @@ public class FXMLTableViewController implements Initializable {
         ObservableList<Person> data = tableView.getItems();
         if (data.add(new Person(fNameField.getText(), lNameField.getText(), emailField.getText()))) {
             Alert information = new Alert(Alert.AlertType.INFORMATION, "Success", ButtonType.OK);
-            information.setTitle("Success");
+            information.setTitle("Successful");
             information.showAndWait();
             fNameField.setText("");
             lNameField.setText("");
