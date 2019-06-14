@@ -14,6 +14,11 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.http.client.methods.CloseableHttpResponse;
+import org.apache.http.client.methods.HttpPost;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClients;
 
 /**
  * This class contain various method which are used to populate the table view
@@ -101,6 +106,22 @@ public class FXMLTableViewController implements Initializable {
         if (result.isPresent() && result.get().equals(ButtonType.OK)) {
             ObservableList<Person> data = tableView.getItems();
             data.removeAll(data);
+        }
+    }
+    
+    public void doPostRequest(String targetUrl){
+        if(StringUtils.isBlank(targetUrl)){
+            throw new IllegalArgumentException("targetUrl不能为空!");
+        }
+        CloseableHttpClient httpClient = HttpClients.createDefault();
+        CloseableHttpResponse response = null;
+        try{
+            HttpPost httppost = new HttpPost(targetUrl);
+            
+        }
+        catch(Exception e){
+            e.printStackTrace();
+            //LOGGER.error("doPostRequest Exception:",e);
         }
     }
 
